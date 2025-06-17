@@ -1,9 +1,4 @@
 <x-app-layout>
-  <x-slot name="header">
-    <h2 class="font-semibold text-2xl text-gray-800 leading-tight text-center">
-      {{ __('Edit Transaction') }}
-    </h2>
-  </x-slot>
 
   <style>
     * {
@@ -70,6 +65,10 @@
 
   <div class="edit-form-container">
     <form action="{{ route('tracker.update', $transaction->id) }}" method="POST">
+      
+    <h2 class="font-semibold text-2xl text-gray-800 leading-tight text-center">
+      {{ __('Edit Transaction') }}
+    </h2>
       @csrf
       @method('PUT')
 
