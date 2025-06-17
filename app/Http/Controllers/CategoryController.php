@@ -11,7 +11,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        
+        $userId = auth()->id();
+        $categories = \App\Models\Category::where('user_id', $userId)->get();
+        return view('editCategory', ['categories' => $categories]);
     }
 
     /**
@@ -55,7 +57,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+    
     }
 
     /**
@@ -63,7 +65,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $category = \App\Models\Category::findOrFail($id);
+        $category->name = $request->input('name');
+        $category->save();
+
+        if ($request->ajax()) {
+            return response()->json(['message' => 'Category updated successfully.', 200]);
+        }
+
+        return redirect()->back()->with('success', 'Category updated successfully.');     
     }
 
     /**
@@ -71,6 +85,8 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = \App\Models\Category::findOrFail($id);
+        $category->delete();
+        return redirect()->back()->with('success', 'Category deleted successfully.');
     }
 }

@@ -47,5 +47,9 @@ Route::get('/allTransactions', [TrackerController::class, 'showforall'])
 
 
 Route::post('/categories/store', [CategoryController::class, 'store'])->name('category.store');
+Route::get('/categories', [CategoryController::class, 'index'])->name('editCategory');
+Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('category.update');
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 
 Route::get('/monthlySummary', [TrackerController::class, 'monthlySummary']  )->name('monthlySummary');

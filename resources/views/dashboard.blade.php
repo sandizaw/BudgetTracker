@@ -177,8 +177,28 @@ td.income {
 }
 
 @media (max-width: 768px) {
+  .container {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
   .summary {
     flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .card h2 {
+    font-size: 22px;
   }
 
   .main {
@@ -188,13 +208,13 @@ td.income {
   .form-section,
   .chart-section {
     padding: 15px;
+    margin-bottom: 20px;
   }
 
-  #create-button,
-  #all-transactions {
-    position: static;
-    width: 100%;
-    margin: 10px 0;
+  form select,
+  form input {
+    font-size: 16px;
+    padding: 12px;
   }
 
   .transactions h3 {
@@ -202,40 +222,34 @@ td.income {
   }
 
   table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
+    font-size: 12px;
   }
 
   th, td {
-    font-size: 14px;
-  }
-
-  .btn-warning,
-  .btn-danger {
-    font-size: 14px;
     padding: 8px 10px;
   }
 
-  .delete-form .fake-delete-btn {
+  #create-button,
+  #all-transactions {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 10px 0 20px;
+    text-align: center;
+  }
+
+  .action-buttons form {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  /* Make the transaction action buttons smaller */
+  .btn-warning, .btn-danger {
+    padding: 6px 8px;
     font-size: 14px;
-    padding: 8px 10px;
-  }
-
-  .action-buttons {
-    display: flex;
-    gap: 10px;
-  }
-
-  header h1 {
-    font-size: 24px;
-  }
-
-  .card h2 {
-    font-size: 22px;
   }
 }
+
 
 </style>
 

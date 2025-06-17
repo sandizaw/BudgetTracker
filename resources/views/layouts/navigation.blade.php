@@ -21,6 +21,9 @@
                     <x-nav-link href="{{route('monthlySummary') }}">   
                         {{ __('Monthly Summary') }}
                     </x-nav-link>
+                    <x-nav-link href="{{route('editCategory') }}">   
+                        {{ __('Edit Category') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -81,6 +84,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{route('monthlySummary') }}">
                 {{ __('Monthly Transactions') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{route('editCategory') }}">
+                {{ __('Edit Category') }}
             </x-responsive-nav-link>
 
         </div>
